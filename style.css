@@ -1,0 +1,52 @@
+body {
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+#nonogram-table {
+    border: 1px solid rgb(39, 39, 39);
+    border-collapse: collapse;
+ 
+}
+
+tr {
+    height: 30px;
+    width: 300px;
+}
+
+
+th {
+    background: #ddd;
+    border: 1px solid rgb(39, 39, 39);
+    box-sizing: border-box;
+}
+
+td {
+    height: 30px;
+    width: 30px;
+    border: 1px solid rgb(39, 39, 39);
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.h-header-cell {
+    padding: 5px;
+}
+
+.v-header-cell {
+    padding: 5px;
+    white-space: nowrap;
+}
+
+tr:hover {
+    background: rgb(173, 243, 241);
+}
+
+.filled {
+    background: #909090;
+}
+
+.empty {
+    background: none;
+}
+
