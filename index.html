@@ -8,9 +8,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <table id="nonogram-table" />
-
-    <button onclick=loadNewGame()>New game</button>
+    <div class="container">
+        <div class="game-container">
+            <table id="nonogram-table"></table>
+        </div>
+        <div class="action-buttons">
+            <button onclick=checkSolution() class="solution btn">Check solution</button>
+            <label for="rows-number">Number of rows:</label>
+            <input value='10' type='number' id='rows-number'/>
+            <label for="columns-number">Number of columns:</label>
+            <input value='10' type='number' id='columns-number' />
+            <button onclick=loadNewGame() class="new-game btn">New game</button>
+            <button onclick=giveClue() class="clue btn">Give me a clue</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
