@@ -15,11 +15,11 @@
         <div class="action-buttons">
             <button onclick=checkSolution() class="solution btn">Check solution</button>
             <label for="rows-number">Number of rows:</label>
-            <input value='10' type='number' id='rows-number'/>
+            <input id="rows-number" type="number" name="rows" min="5" max="30" value="10" />
             <label for="columns-number">Number of columns:</label>
-            <input value='10' type='number' id='columns-number' />
-            <button onclick=loadNewGame() class="new-game btn">New game</button>
-            <button onclick=giveClue() class="clue btn">Give me a clue</button>
+            <input id="columns-number" type="number" name="columns" min="5" max="30" value="10" />
+            <button onclick={loadNewGame()} class="new-game btn">New game</button>
+            <button onclick={giveClue()} class="clue btn">Give me a clue</button>
         </div>
     </div>
 

@@ -1,9 +1,14 @@
 const table = document.getElementById("nonogram-table");
 
-let rows = 7;
-let columns = 8;
+let rows = 10;
+let columns = 10;
 let pictureArray = [];
 let winnerCells = [];
+
+function getRowsAndColumns() {
+  rows = +document.getElementById("rows-number").value;
+  columns = +document.getElementById("columns-number").value;
+}
 
 /**
  * Draw new game board
@@ -23,14 +28,14 @@ function loadNewBoard() {
   const emptyCell = document.createElement("td");
   tableHorizontalHeader.appendChild(emptyCell);
 
+  // Add numbers to the left side headers
   for (let i = 0; i < rows; i++) {
     let tableRow = document.createElement("tr");
     let tableHeaderCell = document.createElement("th");
     let count = 0;
     let countSum = 0;
 
-    tableHeaderCell.classList.add("v-header-cell");
-    tableHeaderCell.classList.add("header");
+    tableHeaderCell.classList.add("v-header-cell", "header");
     table.appendChild(tableRow);
     tableRow.appendChild(tableHeaderCell);
     tableRow.classList.add("table-row");
@@ -75,13 +80,13 @@ function loadNewBoard() {
     }
   }
 
+  // Add numbers to the top headers
   for (let i = 0; i < columns; i++) {
     let tableHeaderCell = document.createElement("th");
     let count = 0;
     let countSum = 0;
 
-    tableHeaderCell.classList.add("h-header-cell");
-    tableHeaderCell.classList.add("header");
+    tableHeaderCell.classList.add("h-header-cell", "header");
     tableHorizontalHeader.appendChild(tableHeaderCell);
 
     for (let j = 0; j < rows; j++) {
@@ -196,6 +201,7 @@ function onLoad() {
 
 function loadNewGame() {
   clearGame();
+  getRowsAndColumns();
   onLoad();
 }
 
